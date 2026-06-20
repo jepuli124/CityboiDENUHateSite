@@ -1,9 +1,12 @@
 import { useState } from 'react'
 
 import './App.css'
+import './Font.css'
+import Sparkles from './components/Sparkles'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [spawnParticles, setSpawnParticles] = useState<boolean>(false)
 
   return (
     <>
@@ -24,18 +27,24 @@ function App() {
         </div>
         <div>
           <h1 style={{fontFamily: 'thernaly'}}>Here we "hate" denu very much, such wow</h1>
+          <h1 style={{fontFamily: 'thernaly'}}>Allegedly he has 67 IQ</h1>
         </div>
         <button
           className="counter"
           onClick={() => {
             setCount((count) => count + 1)
-
+            setSpawnParticles(true)
+            const timeOut = setTimeout(() => {
+              setSpawnParticles(false)
+              clearTimeout(timeOut)
+            }, 100)
           
           }}
         >
           You hate Denu this much: {count}
         </button>
       </section>
+      
 
       <div className="ticks"></div>
 
@@ -78,6 +87,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      <Sparkles spawnParticles={spawnParticles}></Sparkles>
     </>
   )
 }
