@@ -63,7 +63,7 @@ const Sparkle: React.FC<incomingParams> = ({lifetime = 1000, size = 1, done = ()
         className='sparkle'
         style={{
             opacity: 0,
-            position: 'absolute',
+            position: 'fixed',
         }}
         >
         <svg width={defaultSize.current + "vw"} height={defaultSize.current + "vw"} viewBox="0 0 100 100">

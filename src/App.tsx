@@ -3,13 +3,26 @@ import { useState } from 'react'
 import './App.css'
 import './Font.css'
 import Sparkles from './components/Sparkles'
+import { getFromStore, store } from './hooks/StorageHook'
+import GoogleSheetHandler from './components/GoogleSheetHandler'
+import DraggableElement from './components/DraggableElement'
+
+const fetchHate = () => {
+  const value = getFromStore("denuHateAmount")
+  if(Number(value) > 0){
+    return Number(value)
+  }
+  return 0
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(fetchHate())
   const [spawnParticles, setSpawnParticles] = useState<boolean>(false)
+  const [displayForm, setDisplayForm] = useState<boolean>(false)
 
   return (
-    <>
+    <div style={{fontFamily: "grabstein"}}>
+      <h3 >Disclaimer: this is a joke made with consent and love.</h3>
       <section id="center">
         <div className="hero" style={{display: 'flex', justifyContent: 'space-between', gap: '10%'}}>
           <div>
@@ -19,20 +32,27 @@ function App() {
           </div>
           <div></div>
           <div>
-            <img src="./denu.png" alt="" />
+            <DraggableElement>
+              <img src="./denu.png" alt="" />
+            </DraggableElement>
+            
             <p style={{fontFamily: 'moonlitflow'}}>Here is denu</p>
+            <p>(you can throw him away)</p>
           </div>
           
           
         </div>
         <div>
-          <h1 style={{fontFamily: 'thernaly'}}>Here we "hate" denu very much, such wow</h1>
+          <h1 style={{fontFamily: 'thernaly'}}>Here we "hate" denu very much, such much</h1>
           <h1 style={{fontFamily: 'thernaly'}}>Allegedly he has 67 IQ</h1>
         </div>
         <button
           className="counter"
           onClick={() => {
-            setCount((count) => count + 1)
+            setCount((count) => {
+              store("denuHateAmount", (count + 1).toString())
+              return count + 1
+            })
             setSpawnParticles(true)
             const timeOut = setTimeout(() => {
               setSpawnParticles(false)
@@ -43,9 +63,34 @@ function App() {
         >
           You hate Denu this much: {count}
         </button>
+        <div style={{display: 'flex'}}>
+          {Array.from({ length: Math.floor(count/25) }, (_, i) => i).map((value) => (
+            <div key={value}>
+              🔥
+            </div>
+          ))}
+        </div>
       </section>
       
+      <section id="spacer"></section>
 
+      <section >
+        <h1 style={{fontFamily: 'thernaly'}}>What other people have said about denu</h1>
+        <br />
+        <div className='posts'>
+          <GoogleSheetHandler sheetId='1JGVFpSMulRW6mnYys6QYMe1Zk-Jv2hlbbscutWtpK24' WORKSHEET_GID="922221082" ></GoogleSheetHandler>
+        </div>
+        <h2 style={{fontFamily: "thernaly"}}>Want to comment yourself? click <a style={{fontFamily: 'thernaly', color: "#88c6f8", cursor: "pointer"}} onClick={() => setDisplayForm(old => !old)}>here</a></h2>
+        {
+          displayForm?
+          <>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbSocTf_hPDH-4Km4mXOmh94vOLQ4MzSGuGHncr_lI7duN1w/viewform?embedded=true" width="640" height="678" >Loading...</iframe>
+          </>
+          :
+          <></>
+        }
+        
+      </section>
       <div className="ticks"></div>
 
       <section id="next-steps">
@@ -54,7 +99,7 @@ function App() {
             <use href="/icons.svg#documentation-icon"></use>
           </svg>
           <h2>Watch this guy here</h2>
-          <p>He smells, should eat some deodorant</p>
+          <p>He smells (allegedly), should eat some deodorant, that should help him</p>
           <ul>
             <li>
             <a href="https://www.twitch.tv/cityboidenu">Twitch</a>
@@ -87,8 +132,24 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      {
+        count >= 5 ? 
+        <>
+        <section>
+          <img src="./QR.png" alt="" />
+
+        </section>
+
+        <section id="spacer"></section>
+        </>
+        : 
+
+        <></>
+      }
+      
       <Sparkles spawnParticles={spawnParticles}></Sparkles>
-    </>
+
+    </div>
   )
 }
 
