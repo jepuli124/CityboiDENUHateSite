@@ -1,0 +1,46 @@
+@property --gradColor1 {
+    syntax: '<color>';
+    initial-value: rgb(42, 20, 46);
+    inherits: false;
+}
+
+@property --gradColor2 {
+    syntax: '<color>';
+    initial-value: rgb(64, 38, 87);
+    inherits: false;
+}
+
+
+@property --gradColor3 {
+    syntax: '<color>';
+    initial-value: rgb(122, 55, 117);
+    inherits: false;
+}
+
+
+@property --gradColor4 {
+    syntax: '<color>';
+    initial-value: rgb(64, 39, 133);
+    inherits: false;
+}
+
+
+
+button {
+    border: 5px ridge rgb(53, 10, 110);
+    position: relative;
+    padding: 5px 10px;
+    margin: 4px;
+    background: linear-gradient(120deg, var(--gradColor1), var(--gradColor2) );
+    border-radius: 5px;
+    transition: 1.2s, --gradColor1 2s ease, --gradColor2 2s ease;
+
+}
+
+
+
+button:hover{
+    border: 5px ridge rgb(157, 77, 173);
+    --gradColor1: var(--gradColor3);
+    --gradColor2: var(--gradColor4);
+}

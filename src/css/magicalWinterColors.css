@@ -1,0 +1,113 @@
+
+/* Main colours from canva.com presets*/
+@property --LightPurple {
+    syntax: '<color>';
+    initial-value: #8B49AA;
+    inherits: false;
+}
+
+@property --ComfortingPurple {
+    syntax: '<color>';
+    initial-value: #DBC0ED;
+    inherits: false;
+}
+
+
+@property --LilacBush {
+    syntax: '<color>';
+    initial-value: #9B79CE;
+    inherits: false;
+}
+
+
+@property --DaisyBush {
+    syntax: '<color>';
+    initial-value: #4d2d9a;
+    inherits: false;
+}
+
+@property --BoldNavy {
+    syntax: '<color>';
+    initial-value: #151674;
+    inherits: false;
+}
+
+/* Light purple's Analogous colors */
+
+@property --DarkRose {
+    syntax: '<color>';
+    initial-value: #aa4998;
+    inherits: false;
+}
+
+
+@property --NeutralPurple {
+    syntax: '<color>';
+    initial-value: #5b49aa;
+    inherits: false;
+}
+
+
+
+/* ComfortingPurple's Analogous colors */
+
+@property --DreamRoseComforting {
+    syntax: '<color>';
+    initial-value: #edc0e9;
+    inherits: false;
+}
+
+
+@property --VagueBlueComforting {
+    syntax: '<color>';
+    initial-value: #c5c0ed;
+    inherits: false;
+}
+
+
+/* LilacBush's Analogous colors */
+
+@property --MaturePurpleLilac {
+    syntax: '<color>';
+    initial-value: #c579ce;
+    inherits: false;
+}
+
+
+@property --LightStarSkyLilac {
+    syntax: '<color>';
+    initial-value: #7982ce;
+    inherits: false;
+}
+
+
+/* DaisyBush's Analogous colors */
+
+@property --DeepPurpleDaisy {
+    syntax: '<color>';
+    initial-value: #842d9a;
+    inherits: false;
+}
+
+
+@property --DeepBlueDaisy {
+    syntax: '<color>';
+    initial-value: #2d449a;
+    inherits: false;
+}
+
+
+/* BoldNavy's Analogous colors */
+
+@property --PurpleNany {
+    syntax: '<color>';
+    initial-value: #431574;
+    inherits: false;
+}
+
+
+@property --DarkNavy {
+    syntax: '<color>';
+    initial-value: #154674;
+    inherits: false;
+}

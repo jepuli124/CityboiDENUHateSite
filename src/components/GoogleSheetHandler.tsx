@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Post from './Post';
+import eventBusHandler from '../hooks/EventBus';
 
 interface incomingParams{
     sheetId: string
@@ -66,6 +67,11 @@ const GoogleSheetHandler: React.FC<incomingParams> = ({sheetId, WORKSHEET_GID}) 
 
     useEffect(( ) => {
         fetchSheet()
+            const unsub = eventBusHandler.subscribe("GoogleFormSent", fetchSheet)
+        return () => {
+            unsub()
+        }
+
     }, [])
 
     return (

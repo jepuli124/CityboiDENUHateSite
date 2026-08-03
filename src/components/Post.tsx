@@ -16,11 +16,11 @@ const fetchImg = (name: string,img: number) => {
     }
 
 const randomNumber = (name: string) => {
-    const hash = CryptoJS.MD5(""  + name);
+    const hash = CryptoJS.MD5("" + "RandomLetters" + name);
     // Take the first 32-bit word as an integer
     const word = hash.words[0]; 
     // Calculate index within the options array
-    const i = Math.abs(word % 1000);
+    const i = Math.abs(word % 1084);
     return i;
 }
 

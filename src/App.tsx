@@ -2,10 +2,13 @@ import { useState } from 'react'
 
 import './App.css'
 import './Font.css'
+import './css/button.css'
+import './css/inputfield.css'
 import Sparkles from './components/Sparkles'
 import { getFromStore, store } from './hooks/StorageHook'
 import GoogleSheetHandler from './components/GoogleSheetHandler'
 import DraggableElement from './components/DraggableElement'
+import GoogleFormPoster from './components/GoogleFormPoster'
 
 const fetchHate = () => {
   const value = getFromStore("denuHateAmount")
@@ -84,7 +87,7 @@ function App() {
         {
           displayForm?
           <>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbSocTf_hPDH-4Km4mXOmh94vOLQ4MzSGuGHncr_lI7duN1w/viewform?embedded=true" width="640" height="678" >Loading...</iframe>
+            <GoogleFormPoster></GoogleFormPoster>
           </>
           :
           <></>

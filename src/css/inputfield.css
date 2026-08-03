@@ -1,0 +1,25 @@
+@import "magicalWinterColors.css";
+
+
+
+input {
+    font-family: 'grabstein';
+    font-size: larger;
+    field-sizing: content;
+    min-width: 7ch;
+    border: 5px ridge var(--LightPurple);
+    position: relative;
+    padding: 5px 10px;
+    margin: 4px;
+    background: linear-gradient(120deg, var(--DaisyBush), var(--BoldNavy) );
+    border-radius: 5px;
+    transition: 1.2s, --DaisyBush 2s ease, --BoldNavy 2s ease;
+
+}
+
+
+
+input:hover{
+    border: 5px ridge var(--ComfortingPurple);
+
+}
