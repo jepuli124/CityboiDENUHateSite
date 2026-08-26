@@ -28,12 +28,7 @@ function App() {
       <h3 >Disclaimer: this is a joke made with consent and love.</h3>
       <section id="center">
         <div className="hero" style={{display: 'flex', justifyContent: 'space-between', gap: '10%'}}>
-          <div>
-            <img src="./slay.png" alt="" />
-            <p>Here is Slay. He HATES </p>
-            <p style={{fontFamily: 'moonlitflow'}}>Denu</p>
-          </div>
-          <div></div>
+
           <div>
             <DraggableElement>
               <img src="./denu.png" alt="" />
@@ -76,7 +71,15 @@ function App() {
       </section>
       
       <section id="spacer"></section>
+          <h2>Here you may see this fellow</h2>
+          <iframe
+            src="https://player.twitch.tv/?channel=cityboidenu&parent=jepuli124.github.io"
+            height="720px"
+            width="100%"
+            allowFullScreen={true}>
+        </iframe>
 
+      <section id="spacer"></section>
       <section >
         <h1 style={{fontFamily: 'thernaly'}}>What other people have said about denu</h1>
         <br />
@@ -128,7 +131,18 @@ function App() {
                 GitHub
               </a>
             </li>
-           
+            <li>
+              <a href="https://jepuli124.github.io/" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#github-icon"></use>
+                </svg>
+                Main site
+              </a>
+            </li>
           </ul>
         </div>
       </section>

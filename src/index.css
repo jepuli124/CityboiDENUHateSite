@@ -19,7 +19,8 @@
   letter-spacing: 0.18px;
   color-scheme: dark;
   color: var(--text);
-  background: var(--bg);
+  background: #06233d;
+  background: linear-gradient(90deg,  rgb(179, 61, 163) 0%, rgb(59, 43, 94) 5%,rgb(5, 26, 44) 14%, rgb(5, 26, 44) 86%, rgb(59, 43, 94) 95%, rgb(179, 61, 163) 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
